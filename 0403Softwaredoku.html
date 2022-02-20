@@ -131,6 +131,8 @@ a:active {
 	font-size: x-large;
 }
 </style>
+	<script src="plotly-latest.js"></script><style id="plotly.js-style-global"></style>
+
 </head>
 
 <body>
@@ -245,18 +247,39 @@ a:active {
 		</tr>
 		<tr>
 			<td class="auto-style15" style="height: 600px;"><!-- #BeginEditable "Inhalt" -->
-			<b>Dash-Python<br><br></b>Die Dash Anwendung wird über eine Website 
-			dargestellt. Die aufgenommenen Messwerte können über die .csv Datei 
-			hochgeladen werden und über ein Dropdown Menü den Karten 
+			<b><strong>Javascrpit - HTML</strong><br></b><br>				
+			<div>
+				<b style="font-size: x-large; ">CSV File über das Feld ziehen, Daten werden automatisch hinzugefügt.</b>
+			</div>
+			<div class="example">
+				<div id="drop_zone">Drop files here</div>
+				<output id="file_list2"></output>
+			</div>
+
+
+			<output id="list"></output>
+			<br>
+			<br>
+			<br>
+
+
+
+
+
+
+			<div id="myDiv"><!-- Plotly chart will be drawn inside this DIV --></div><b><br>
+			<br><br>Dash-Python<br><br></b>Die Dash Anwendung wird über eine 
+			Website dargestellt. Die aufgenommenen Messwerte können über die 
+			.csv Datei hochgeladen werden und über ein Dropdown Menü den Karten 
 			hinzugefügt/entfernt werden. Es stehen zwei Karten zur Auswahl:<br>
-			<br>- Trip map: Hier werden die Orte der aufgenommen Messwerte als 
-			Punkte dargestellt und verbunden, wodurch die Route während der 
-			Aufnahme dargestellt wird. Bewegt man den Mauszeiger über die 
-			Punkte, werden alle Messwerte, die an diesem Ort aufgenommen worden 
-			sind, angezeigt.<br><br>
-			<img alt="" height="540" src="TripMap.png" width="1000"><br><br>- 
-			Mean map: Die Mean Map fasst Messpunkte in einem bestimmten Bereich 
-			zusammen und ermittelt den Mittelwert für einen auswählbaren 
+			<br>In der <strong>Trip map</strong> werden die Orte der aufgenommen 
+			Messwerte als Punkte dargestellt und verbunden, wodurch die Route 
+			während der Aufnahme dargestellt wird. Bewegt man den Mauszeiger 
+			über die Punkte, werden alle Messwerte, die an diesem Ort 
+			aufgenommen worden sind, angezeigt.<br><br>
+			<img alt="" height="540" src="TripMap.png" width="1000"><br><br>Die
+			<strong>Mean Map</strong> fasst Messpunkte in einem bestimmten 
+			Bereich zusammen und ermittelt den Mittelwert für einen auswählbaren 
 			Messwert. Der Mittelwert wird schließlich über ein Seckseck, welches 
 			entsprechend dem Wert und einer vorgegebenen Farbskala gefärbt ist, 
 			auf der Karte angezeigt.<br><br>
@@ -264,8 +287,7 @@ a:active {
 			Dash Anwendung wird von ww.pythonanywhere.com für eine begrenzte 
 			Zeit (bis zum 18.5.2022) kostenlos gehostet und über folgenden Link 
 			erreichbar:<br><a href="http://mappm25.pythonanywhere.com/">Fine 
-			dust measuring system map</a><br><br><br><strong>Javascrpit - HTML</strong><br>
-			<br>Website hier eingefügt<!-- #EndEditable --></td>
+			dust measuring system map</a><br><br><br><!-- #EndEditable --></td>
 		</tr>
 	</table>
 	<br></div>
@@ -283,6 +305,36 @@ a:active {
 		</tr>
 	</table>
 	<br></div>
+
+
+<script src="index.js" type="module"></script>
+<script src="input_parse_csv.js" type="module"></script>
+
+
+
+<style>
+	.example {
+		padding: 10px;
+		border: 1px solid #ff0000;
+		color: #ff0000;
+	}
+
+	#drop_zone {
+		border: 2px dashed #ff0000;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		border-radius: 5px;
+		padding: 25px;
+		text-align: center;
+		font: 20pt bold ;
+		color: #ff0000;
+	}
+
+	#myDiv{
+		background-color: #3f3e3c;
+		border: 2px #fff
+	}
+</style>
 
 </body>
 
